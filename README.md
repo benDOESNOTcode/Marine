@@ -1,4 +1,129 @@
-🌊 Toxic Waters: Marine Pollution & PhytoplanktonAn analysis of how microplastics and human activity impact the "lungs of our oceans."📌 Project OverviewPhytoplankton are the invisible heroes of our planet—they produce over 50% of the world's oxygen and regulate global temperatures.1 However, they face a growing threat: Microplastics.This project investigates the intersection of:Marine Biodiversity: How plastic density correlates with phytoplankton decline.Human Behavior: Analyzing whether global fishing vessels avoid or ignore high-pollution "hotspots."📊 Data SourcesThe study integrates three massive global datasets to build a comprehensive picture of ocean health.DatasetPeriodSourceKey MetricsMicroplastics1972–2022NCEIPlastic Density, CoordinatesPlankton1958–2017PANGAEAChlorophyll-a, Sea Surface Temp (SST)Fishing Vessels2012–2020Global Fishing WatchFishing Hours, Vessel Location🛠️ MethodologyOur analytical pipeline was built using Python to handle over 56 million rows of data:Data Refinement: Scrubbed metadata, handled null values, and standardized spatial coordinates (Lat/Long) for seamless merging.Temporal Segmentation: Divided data into three eras (1973-2000, 2001-2010, 2011-2022) to track changes over decades.Spatial Analysis: Used Geopandas to map fishing density against known plastic accumulation zones.Correlation Modeling: Analyzed chlorophyll-a levels as a primary proxy for phytoplankton health.💡 Key Findings📉 The Decline is Real: We observed a consistent downward trend in phytoplankton populations globally.2🧪 Plastic Correlation: While a link exists between plastic density and plankton loss, it is not yet statistically significant in our current model, suggesting other stressors (like warming) are also at play.🚢 Fishing Resilience: Surprisingly, human fishing effort shows zero decrease in heavily polluted areas. Economic activity continues unabated despite environmental degradation.🚀 Getting StartedPrerequisitesEnsure you have the following installed:pandasnumpymatplotlibgeopandasInstallationClone the repositoryBashgit clone https://github.com/[your-username]/marine-pollution-plankton.git
+# 🌊 Toxic Waters: Marine Pollution & Phytoplankton
+
+**How microplastics and human activity are reshaping the lungs of our oceans**
+
+---
+
+## Why This Matters
+
+Phytoplankton may be microscopic, but their impact is planetary. They generate **over 50% of Earth’s oxygen**, regulate global climate, and anchor the marine food web. Today, these organisms face mounting pressure from **microplastic pollution** and **intensifying human activity**.
+
+This project explores how pollution and fishing behavior intersect with phytoplankton health at a **global, multi-decade scale**.
+
+---
+
+## 🎯 Project Objectives
+
+This study investigates three tightly linked questions:
+
+* **Marine Health:** Does increasing plastic density correlate with declining phytoplankton levels?
+* **Human Behavior:** Do commercial fishing vessels avoid highly polluted ocean regions—or continue operating regardless?
+* **Long-Term Change:** How have these relationships evolved over the last 50 years?
+
+---
+
+## 📊 Data at a Glance
+
+We integrate **three large-scale global datasets** to capture biological, environmental, and human dynamics.
+
+| Dataset             | Time Span | Source               | Key Variables                  |
+| ------------------- | --------- | -------------------- | ------------------------------ |
+| **Microplastics**   | 1972–2022 | NCEI                 | Plastic density, coordinates   |
+| **Phytoplankton**   | 1958–2017 | PANGAEA              | Chlorophyll-a, SST             |
+| **Fishing Vessels** | 2012–2020 | Global Fishing Watch | Fishing hours, vessel location |
+
+In total, the pipeline processes **56+ million rows of spatiotemporal data**.
+
+---
+
+## 🛠️ Methodology
+
+The analysis was built entirely in **Python**, emphasizing scalability and reproducibility.
+
+### 1. Data Engineering
+
+* Cleaned metadata and handled missing values
+* Standardized spatial coordinates (latitude/longitude)
+* Aligned datasets across time and space
+
+### 2. Temporal Analysis
+
+To capture long-term trends, data were segmented into three eras:
+
+* **1973–2000:** Pre-globalization baseline
+* **2001–2010:** Rapid industrial expansion
+* **2011–2022:** Modern high-impact period
+
+### 3. Spatial Modeling
+
+* Used **GeoPandas** to map fishing density
+* Overlaid vessel activity with known plastic accumulation zones
+
+### 4. Environmental Correlation
+
+* Modeled **chlorophyll-a** as a proxy for phytoplankton health
+* Tested correlations between plastic density, temperature, and biological decline
+
+---
+
+## 💡 Key Findings
+
+### 📉 Global Decline
+
+Phytoplankton levels show a **consistent downward trend** across most ocean basins.
+
+### 🧪 Plastic vs. Biology
+
+* Plastic density correlates with reduced chlorophyll-a
+* The relationship is **not yet statistically significant**, suggesting compounding stressors such as warming oceans
+
+### 🚢 Human Behavior
+
+Commercial fishing effort shows **no measurable decline** in heavily polluted regions.
+
+> Economic activity continues—even where environmental degradation is most severe.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure the following packages are installed:
+
+* `pandas`
+* `numpy`
+* `matplotlib`
+* `geopandas`
+
+### Installation
+
+```bash
+git clone https://github.com/[your-username]/marine-pollution-plankton.git
 cd marine-pollution-plankton
-Install dependenciesBashpip install pandas numpy matplotlib geopandas
-Launch the analysisBashjupyter notebook cs252a_fishFood.ipynb
+pip install pandas numpy matplotlib geopandas
+```
+
+### Run the Analysis
+
+```bash
+jupyter notebook cs252a_fishFood.ipynb
+```
+
+---
+
+## 🔭 Future Work
+
+* Incorporate **causal modeling** (e.g., panel regressions)
+* Add **ocean circulation data** to track plastic transport
+* Extend analysis to **species-level biodiversity impacts**
+
+---
+
+## 📌 Takeaway
+
+This project highlights a critical disconnect: **marine ecosystems are deteriorating, yet human activity remains unchanged**. Understanding—and visualizing—this gap is a necessary step toward informed policy and sustainable ocean management.
+
+---
+
+*CS252A · Environmental Data Science · Global Ocean Health*
